@@ -17,7 +17,7 @@ export function App() {
 
   const handleClick = async () => {
     const messageResponse = await fetchMessage()
-    setMessage(messageResponse.message)
+    setMessage(messageResponse.message + 'blabla')
   }
 
   return (
