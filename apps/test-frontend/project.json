@@ -48,7 +48,8 @@
       "configurations": {
         "production": {
           "buildTarget": "test-frontend:build:production",
-          "hmr": false
+          "hmr": false,
+          "liveReload": true
         }
       }
     },

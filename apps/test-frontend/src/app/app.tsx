@@ -1,9 +1,25 @@
+import { Button } from '@mantine/core';
+import { useState } from 'react';
 import styles from './app.module.scss';
 
 import { ReactComponent as Logo } from './logo.svg';
 import star from './star.svg';
 
 export function App() {
+
+  const [message, setMessage] = useState<string>('')
+
+  const fetchMessage = async (): Promise<{ message: string }> => {
+    const response = await fetch('http://localhost:3333/api')
+    const data = await response.json()
+    return data
+  }
+
+  const handleClick = async () => {
+    const messageResponse = await fetchMessage()
+    setMessage(messageResponse.message)
+  }
+
   return (
     <div className={styles.app}>
       <header className="flex">
@@ -11,6 +27,8 @@ export function App() {
         <h1>Welcome to test-frontend!</h1>
       </header>
       <main>
+        <Button onClick={handleClick}>Get Message</Button>
+        <h1>{message}</h1>
         <h2>Resources &amp; Tools</h2>
         <p>Thank you for using and showing some ♥ for Nx.</p>
         <div className="flex github-star-container">
