@@ -1,6 +1,6 @@
 {
   "name": "nx-nest-react-test-project",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
