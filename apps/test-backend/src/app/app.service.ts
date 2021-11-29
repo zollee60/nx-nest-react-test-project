@@ -4,6 +4,6 @@ import { Injectable } from '@nestjs/common'
 export class AppService {
   getData(): { message: string } {
     const response = { message: 'Welcome to test-backend!' }
-    return { message: '' }
+    return response
   }
 }
